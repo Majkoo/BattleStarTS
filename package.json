@@ -1,0 +1,30 @@
+{
+  "name": "battlestarts",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "rxjs": "~7.0.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "4.14.168",
+    "ts-loader": "~9.1.2",
+    "webpack": "~5.36.2",
+    "webpack-cli": "4.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Majkoo/BattleStarTS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Majkoo/BattleStarTS/issues"
+  },
+  "homepage": "https://github.com/Majkoo/BattleStarTS#readme"
+}

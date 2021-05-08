@@ -1,0 +1,210 @@
+body {
+    overflow: hidden;
+    
+    background-image: url('./public/img/2ships.png');
+    background-size: cover;
+    background-position: center;
+}
+
+#shipFormDiv {
+    background-image: url('./public/img/ShipCreator.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    height: 300px;
+    width: 350px;
+
+    border: solid 1px;;
+    border-color: black;
+    border-radius: 5px;
+    border-collapse: inherit;
+
+    transition:0.7s ease;
+    position:absolute;
+    left:3%;
+    top:-220px;
+    background-color:gray;
+    color:#fff;
+}
+#shipFormDiv button {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    background-color: #3f3f74;
+    font-size: 16px;
+    color:#56dd93;
+
+    height: 10%;
+    width: 44%;
+    left: 50%;
+    bottom: 5% ;
+
+    border: solid;
+    border-color: #37946e;
+    border-radius: 5px;
+}
+#shipFormDiv:hover {
+    top:0;
+  }
+#shipForm {
+    transform: translateZ(50%);
+    padding-left: 12%;
+    padding-top: 20% ;
+}
+#shipForm input {
+    border: solid 2px;
+    border-color: #37946e;
+    border-radius: 5px;
+    background-color: #3f3f74;
+    color: #56dd93;
+}
+
+#fightLogger {
+
+    background-image: url('./public/img/BasicBckg.png');
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+    
+    transform: translate(-50%);
+    position: absolute;
+    overflow-y: auto;
+
+    padding-left: 20px;
+    padding-right: 20px;
+
+    left: 50%;
+    width: 450px;
+    height: 30%;
+    bottom: 1%;
+
+    border: solid;
+    border-color: black;
+    border-radius: 5px;
+}
+#fightLogger p {
+    color: #56dd93;
+    font-size: 18px;
+}
+#loggerTitle {
+    color: #56dd93;
+
+    background-image: url('./public/img/BasicBckg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+
+    position: absolute;
+    transform: translate(-50%, 0%);
+    font-size: 36px;
+    text-align: center;
+
+    left: 50%;
+    bottom: 32%;
+
+    border: solid;
+    border-color: black;
+    border-radius: 5px;
+
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 45px;
+    width: 450px;
+}
+
+#shipList {
+    background-image: url('./public/img/BasicBckg.png');
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: left;
+
+    color: #56dd93;
+    transition: 0.7s ease;
+    background-color: gray;
+    transform: translate(50%);
+    position: absolute;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 2%;
+
+    left: 89%;
+    width: 15%;
+    height: 70%;
+    top: 10%;
+    bottom:10%;
+
+    border: solid 1px;
+    border-color: black;
+    border-radius: 5px;
+}
+#shipList:hover {
+    left:72.5%;
+  }
+#shipList p {
+    font-size: 16px;
+    text-align: left;
+}
+#shipList #listTitle {
+    position: inherit;
+    font-size: 24px;
+    top: 10;
+}
+#shipLog {
+    padding: 20px;
+}
+
+#FightFormDiv {
+    background-image: url('./public/img/BasicBckg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    transform: translate(-50%, -50%);
+    height: 215px;
+    width: 250px;
+
+    border: solid 1px;;
+    border-color: black;
+    border-radius: 5px;
+    border-collapse: inherit;
+
+    position:absolute;
+    left:50%;
+    top:30%;
+    color:#56dd93;
+}
+#FightForm {
+    width: 180px;
+    height: 160px;
+
+    margin-top: 40px;
+    margin-left: 35px;
+}
+#fightForm button {
+    margin-top: 5%;
+    color: #56dd93;
+    background-color: #3f3f74;
+
+    width: 50%;
+    font-size: 18px;
+    text-align: center;
+
+    border: solid;
+    border-color: #37946e;
+    border-radius: 5px;
+}
+
+#fightForm input {
+    border: solid 2px;
+    border-color: #37946e;
+    border-radius: 5px;
+    background-color: #3f3f74;
+
+    color: #56dd93;
+}
+#fightForm p {
+    width: 250px;
+    text-align: center;
+    margin-left: -35px;
+}
+
+
