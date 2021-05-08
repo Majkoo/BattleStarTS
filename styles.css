@@ -6,8 +6,9 @@ body {
     background-position: center;
 }
 
+/* SHIP FORM DIV --- SHIP FORM DIV --- SHIP FORM DIV --- SHIP FORM DIV */
 #shipFormDiv {
-    background-image: url('./img/ShipCreator.png');
+    background-image: url('img/ShipCreator.png');
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -22,11 +23,37 @@ body {
     transition:0.7s ease;
     position:absolute;
     left:3%;
-    top:-220px;
-    background-color:gray;
-    color:#fff;
+
+    top:-220px; 
+
 }
-#shipFormDiv button {
+#shipFormDiv:hover {
+    top:0;
+}
+#shipFormDiv form {
+    padding-top: 75px;
+    padding-left: 25px;
+color:#56dd93;
+
+}
+#ShipFormDiv form #inputName {
+    width: 120px;
+
+}
+#ShipFormDiv form #inputDamage,#inputSpeed,#inputHealth,#remainingPoints {
+    width: 45px;
+    text-align: center;
+}
+#ShipFormDiv form button {
+    border: solid 2px;
+    border-color: #37946e;
+    border-radius: 5px;
+    background-color: #3f3f74;
+    color: #56dd93;
+    width: 25px;
+
+}
+#shipFormDiv #createBtn {
     transform: translate(-50%, -50%);
     position: absolute;
     background-color: #3f3f74;
@@ -36,27 +63,23 @@ body {
     height: 10%;
     width: 44%;
     left: 50%;
-    bottom: 5% ;
+    bottom: 5%;
 
     border: solid;
     border-color: #37946e;
     border-radius: 5px;
 }
-#shipFormDiv:hover {
-    top:0;
-  }
-#shipForm {
-    transform: translateZ(50%);
-    padding-left: 12%;
-    padding-top: 20% ;
+#ShipFormDiv td {
+    color:#56dd93;
 }
-#shipForm input {
+#shipFormDiv input {
     border: solid 2px;
     border-color: #37946e;
     border-radius: 5px;
     background-color: #3f3f74;
     color: #56dd93;
 }
+/* /SHIP FORM DIV -- /SHIP FORM DIV -- /SHIP FORM DIV -- /SHIP FORM DIV */
 
 #fightLogger {
 

@@ -8,35 +8,81 @@
 </head>
 <body>
 
+    <!-- SHIP FORM  SHIP FORM  SHIP FORM  SHIP FORM  SHIP FORM -->
 <div id="shipFormDiv">
 <form id="shipForm">
-    <p>
-        <input type="text"
-                placeholder="Ship Name"
-                id="inputName" />
-    </p>
-    <p>
-        <input type="number"
-                placeholder="Ship Damage"
-                id="inputDamage" />
-    </p>
-    <p>
-        <input type="number"
-                placeholder="Ship Speed"
-                id="inputSpeed" />
-    </p>
-    <p>
-        <input type="number"
-                placeholder="Ship health"
-                id="inputHealth" />
-    </p>
+<table>
+    
+    <thead>
+        <tr>
+        <td>
+            Name:
+        </td>
+        <td>
+            <input type="text"
+            placeholder="Ship Name"
+            id="inputName" />
+        </td>
+        </tr>
+    </thead>
 
-    <button type="submit"> Create new Ship </button>
+    <tbody>
+        
+        <tr>
+        <td>
+            Damage:
+        </td>
+        <td>
+            <input type="number" id="inputDamage" value="1" disabled />
+            <button id="dmgDcsBtn">-</button>
+            <button id="dmgIncBtn">+</button>
+        </td>
+        </tr>
 
-</form>
+        <tr>
+        <td>
+            Speed:
+        </td>
+        <td>
+            <input type="number" id="inputSpeed" value="1"  disabled />
+            <button id="spdDcsBtn">-</button>
+            <button id="spdIncBtn">+</button>
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+            Health:
+        </td>
+        <td>
+            <input type="number" id="inputHealth" value="1" disabled />
+            <button id="hpDcsBtn">-</button>
+            <button id="hpIncBtn">+</button>
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+            Remaining points:
+        </td>
+        <td>
+            <input id="remainingPoints" type="number" value="15" disabled>
+        </td>
+        </tr>
+
+        <tr>
+        <td></td>
+        <td><button type="submit" id="createBtn"> Create new Ship </button></td>
+        </tr>
+
+    </tbody>
+</table>
+
+</form> 
 </div>
+<!--/SHIP FORM /SHIP FORM /SHIP FORM /SHIP FORM /SHIP FORM -->
 
-<div id="loggerTitle"> Fight Logger </div>
+<div id="loggerTitle"> Logger </div>
 <div id="fightLogger">
     <p id="fightLog"></p>
 </div>
