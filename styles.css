@@ -1,13 +1,13 @@
 body {
     overflow: hidden;
     
-    background-image: url('./public/img/2ships.png');
+    background-image: url('./img/2ships.png');
     background-size: cover;
     background-position: center;
 }
 
 #shipFormDiv {
-    background-image: url('./public/img/ShipCreator.png');
+    background-image: url('./img/ShipCreator.png');
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -60,7 +60,7 @@ body {
 
 #fightLogger {
 
-    background-image: url('./public/img/BasicBckg.png');
+    background-image: url('./img/BasicBckg.png');
     background-size: cover;
     background-repeat: repeat;
     background-position: center;
@@ -88,7 +88,7 @@ body {
 #loggerTitle {
     color: #56dd93;
 
-    background-image: url('./public/img/BasicBckg.png');
+    background-image: url('./img/BasicBckg.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
@@ -113,7 +113,7 @@ body {
 }
 
 #shipList {
-    background-image: url('./public/img/BasicBckg.png');
+    background-image: url('./img/BasicBckg.png');
     background-size: cover;
     background-repeat: repeat;
     background-position: left;
@@ -154,7 +154,7 @@ body {
 }
 
 #FightFormDiv {
-    background-image: url('./public/img/BasicBckg.png');
+    background-image: url('./img/BasicBckg.png');
     background-size: cover;
     background-repeat: no-repeat;
 
