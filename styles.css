@@ -7,6 +7,8 @@ body {
 }
 
 /* SHIP FORM DIV --- SHIP FORM DIV --- SHIP FORM DIV --- SHIP FORM DIV */
+/* SHIP FORM DIV --- SHIP FORM DIV --- SHIP FORM DIV --- SHIP FORM DIV */
+
 #shipFormDiv {
     background-image: url('img/ShipCreator.png');
     background-size: cover;
@@ -40,7 +42,8 @@ color:#56dd93;
     width: 120px;
 
 }
-#ShipFormDiv form #inputDamage,#inputSpeed,#inputHealth,#remainingPoints {
+#ShipFormDiv form #inputDamage,#inputSpeed,
+#inputHealth,#remainingPoints, #inputAccuracy, #inputTech {
     width: 45px;
     text-align: center;
 }
@@ -63,7 +66,7 @@ color:#56dd93;
     height: 10%;
     width: 44%;
     left: 50%;
-    bottom: 5%;
+    bottom: 0.1%;
 
     border: solid;
     border-color: #37946e;
@@ -79,6 +82,7 @@ color:#56dd93;
     background-color: #3f3f74;
     color: #56dd93;
 }
+/* /SHIP FORM DIV -- /SHIP FORM DIV -- /SHIP FORM DIV -- /SHIP FORM DIV */
 /* /SHIP FORM DIV -- /SHIP FORM DIV -- /SHIP FORM DIV -- /SHIP FORM DIV */
 
 #fightLogger {
@@ -103,6 +107,7 @@ color:#56dd93;
     border: solid;
     border-color: black;
     border-radius: 5px;
+    border-top: none;
 }
 #fightLogger p {
     color: #56dd93;
@@ -122,11 +127,12 @@ color:#56dd93;
     text-align: center;
 
     left: 50%;
-    bottom: 32%;
+    bottom: 31%;
 
     border: solid;
     border-color: black;
     border-radius: 5px;
+    border-bottom: none;
 
     padding-top: 20px;
     padding-left: 20px;

@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <!-- SHIP FORM  SHIP FORM  SHIP FORM  SHIP FORM  SHIP FORM -->
+<!-- SHIP FORM  SHIP FORM  SHIP FORM  SHIP FORM  SHIP FORM -->
 <div id="shipFormDiv">
 <form id="shipForm">
 <table>
@@ -26,59 +26,86 @@
         </tr>
     </thead>
 
-    <tbody>
-        
-        <tr>
+<tbody>
+    
+    <tr>
+    <form>
+    <td> 
+        Damage:
+    </td>
+    
+    <td>
+        <input type="number" id="inputDamage" value="1" disabled />
+        <button id="dmgDcsBtn">-</button>
+        <button id="dmgIncBtn">+</button>
+    </td>
+    </form>
+    </tr>
+
+    <tr>
+    <td>
+        Speed:
+    </td>
+    <td>
+        <input type="number" id="inputSpeed" value="1"  disabled />
+        <button id="spdDcsBtn">-</button>
+        <button id="spdIncBtn">+</button>
+    </td>
+    </tr>
+
+    <tr>
+    <td>
+        Health:
+    </td>
+    <td>
+        <input type="number" id="inputHealth" value="1" disabled />
+        <button id="hpDcsBtn">-</button>
+        <button id="hpIncBtn">+</button>
+    </td>
+    </tr>
+
+    <tr>
         <td>
-            Damage:
+            Tech:
         </td>
         <td>
-            <input type="number" id="inputDamage" value="1" disabled />
-            <button id="dmgDcsBtn">-</button>
-            <button id="dmgIncBtn">+</button>
+            <input type="number" id="inputTech" value="1" disabled />
+            <button id="TechDcsBtn">-</button>
+            <button id="TechIncBtn">+</button>
         </td>
         </tr>
 
-        <tr>
+    <tr>
+
+    <tr>
         <td>
-            Speed:
+            Accuracy:
         </td>
         <td>
-            <input type="number" id="inputSpeed" value="1"  disabled />
-            <button id="spdDcsBtn">-</button>
-            <button id="spdIncBtn">+</button>
+            <input type="number" id="inputAccuracy" value="1" disabled />
+            <button id="AccDcsBtn">-</button>
+            <button id="AccIncBtn">+</button>
         </td>
         </tr>
 
-        <tr>
-        <td>
-            Health:
-        </td>
-        <td>
-            <input type="number" id="inputHealth" value="1" disabled />
-            <button id="hpDcsBtn">-</button>
-            <button id="hpIncBtn">+</button>
-        </td>
-        </tr>
+    <tr>
 
-        <tr>
-        <td>
-            Remaining points:
-        </td>
-        <td>
-            <input id="remainingPoints" type="number" value="15" disabled>
-        </td>
-        </tr>
+    <td>
+        Remaining points:
+    </td>
+    <td>
+        <input id="remainingPoints" type="number" value="10" disabled>
+    </td>
+    </tr>
 
-        <tr>
-        <td></td>
-        <td><button type="submit" id="createBtn"> Create new Ship </button></td>
-        </tr>
+    <tr>
+    <td></td>
+    <td><button type="submit" id="createBtn"> Create new Ship </button></td>
+    </tr>
 
-    </tbody>
+</tbody>
 </table>
-
-</form> 
+</form>
 </div>
 <!--/SHIP FORM /SHIP FORM /SHIP FORM /SHIP FORM /SHIP FORM -->
 

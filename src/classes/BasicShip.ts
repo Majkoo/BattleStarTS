@@ -5,7 +5,8 @@ export class BasicShip {
         public damage: number,
         public speed: number,
         public health: number,
-        
+        public tech: number,
+        public accuracy: number,
     ){}
 
     Description(ID: number): string {
@@ -15,17 +16,24 @@ export class BasicShip {
         Ship name:     ${this.name}\n
         Ship damage:   ${this.damage}\n
         Ship speed:    ${this.speed}\n
-        Ship health:   ${this.health}\n\n `
+        Ship health:   ${this.health}\n
+        Ship tech:     ${this.tech}\n
+        Ship Accuracy: ${this.accuracy}\n\n`
 
     }
+
     FightDesc(): string {
         return `${this.name}:\n
         --- DMG:   ${this.damage}  \n
         --- SPD:    ${this.speed} \n
-        --- HP:   ${this.health} \n\n `
+        --- HP:   ${this.health} \n
+        --- Tech: ${this.tech}\n
+        --- ACC:  ${this.accuracy}\n `
     }
 
     Fight(opponent: BasicShip): string {
+
+        // CALA LOGIKA DO WYMIANY
 
         let raport:string = '';
         let round:number = 1;
@@ -33,24 +41,19 @@ export class BasicShip {
         let s1damage: number = this.damage;
         let s1speed: number  = this.speed;
         let s1health: number = this.health;
-        if (s1speed > 60) {
-            s1speed = 60;
-        } else 
-        if (s1speed < 3) {
-            s1speed = 3;
+        let s1dodgeChance: number =  (Math.log(s1speed/2.5) / Math.log(1.15))+3;
+        if (s1dodgeChance < 1) {
+            s1dodgeChance = 1;
         }
-        let s1dodgeChance = s1speed;
+
 
         let s2damage: number = opponent.damage;
         let s2speed: number  = opponent.speed;
         let s2health: number = opponent.health;
-        if (s2speed > 60) {
-            s2speed = 60;
-        } else 
-        if (s2speed < 3) {
-            s2speed = 3;
+        let s2dodgeChance: number =  (Math.log(s2speed/2.5) / Math.log(1.15))+3;
+        if (s2dodgeChance < 1) {
+            s2dodgeChance = 1;
         }
-        let s2dodgeChance = s2speed;
 
         raport += ` ${this.FightDesc()}\n`
         raport += ` ${opponent.FightDesc()}\n`
