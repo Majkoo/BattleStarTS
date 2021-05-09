@@ -1,5 +1,5 @@
 import { BasicShip } from './classes/BasicShip';
-import { CreatorListener } from './classes/CreatorListener';
+import { ShipCreator } from './classes/ShipCreator';
 
 // fight variables
 const fightForm = document.querySelector('#fightForm') as HTMLFormElement;
@@ -21,8 +21,8 @@ fightForm.addEventListener('submit', (e: Event) => {
     }
 });
 
-const FormListenerInstance = new CreatorListener();
-FormListenerInstance.StartListening();
+const ShipCreatingInstance = new ShipCreator();
+ShipCreatingInstance.StartListening();
 
 // default ships
 export let shipList: BasicShip[] = []

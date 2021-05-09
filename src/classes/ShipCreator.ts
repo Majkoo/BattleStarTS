@@ -2,7 +2,7 @@ import {Listener} from './ButtonListener';
 import {shipList} from '../app';
 import {BasicShip} from './BasicShip';
 
-export class CreatorListener {
+export class ShipCreator {
 
     StartListening() {
         let shipLog = document.querySelector('#shipLog') as HTMLElement;
