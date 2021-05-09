@@ -2,7 +2,7 @@ import {Listener} from './ButtonListener';
 import {shipList} from '../app';
 import {BasicShip} from './BasicShip';
 
-export class FormListener {
+export class CreatorListener {
 
     StartListening() {
         let shipLog = document.querySelector('#shipLog') as HTMLElement;
@@ -25,9 +25,9 @@ export class FormListener {
 
             let ship = new BasicShip(
                 nameInput.value, 
-                damageInput.valueAsNumber, 
+                damageInput.valueAsNumber*10, 
                 speedInput.valueAsNumber, 
-                healthInput.valueAsNumber,
+                healthInput.valueAsNumber*100,
                 techInput.valueAsNumber,
                 accuracyInput.valueAsNumber
                 )

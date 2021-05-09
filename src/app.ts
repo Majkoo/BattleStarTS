@@ -1,5 +1,5 @@
 import { BasicShip } from './classes/BasicShip';
-import { FormListener } from './classes/FormListener';
+import { CreatorListener } from './classes/CreatorListener';
 
 // fight variables
 const fightForm = document.querySelector('#fightForm') as HTMLFormElement;
@@ -21,7 +21,7 @@ fightForm.addEventListener('submit', (e: Event) => {
     }
 });
 
-const FormListenerInstance = new FormListener();
+const FormListenerInstance = new CreatorListener();
 FormListenerInstance.StartListening();
 
 // default ships
