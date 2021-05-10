@@ -23,6 +23,15 @@ body {
 /* SHIP FORM DIV --- SHIP FORM DIV --- SHIP FORM DIV --- SHIP FORM DIV */
 /* SHIP FORM DIV --- SHIP FORM DIV --- SHIP FORM DIV --- SHIP FORM DIV */
 
+#shipFormDiv input[type=number] {
+    -moz-appearance: textfield;
+  }
+#shipFormDiv input::-webkit-outer-spin-button,
+#shipFormDiv input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 #shipFormDiv {
     border: solid 20px;
     border-image: url('./img/border.png') repeat 31%;
@@ -187,7 +196,7 @@ color:#56dd93;
 
 #FightFormDiv {
     border: solid 20px;
-    border-image: url('./img/border.png') stretch 33%;
+    border-image: url('./img/border.png') stretch 32%;
     background-color: #3f3f74;
     background-size: cover;
     background-repeat: repeat;

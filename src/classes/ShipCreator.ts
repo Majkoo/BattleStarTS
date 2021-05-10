@@ -1,6 +1,7 @@
 import {Listener} from './ButtonListener';
 import {shipList} from '../app';
 import {BasicShip} from './BasicShip';
+import {IsShip} from '../interfaces/IsShip';
 
 export class ShipCreator {
 
@@ -23,16 +24,17 @@ export class ShipCreator {
     
             if (nameInput.value.length > 3 && RemainingPoints.valueAsNumber === 0) {
 
-            let ship = new BasicShip(
-                nameInput.value, 
-                damageInput.valueAsNumber*10, 
-                speedInput.valueAsNumber, 
-                healthInput.valueAsNumber*100,
-                techInput.valueAsNumber,
-                accuracyInput.valueAsNumber
-                )
+            let ship: IsShip = {
+                name: nameInput.value, 
+                damage: damageInput.valueAsNumber*10, 
+                speed: speedInput.valueAsNumber, 
+                health: healthInput.valueAsNumber*100,
+                tech: techInput.valueAsNumber,
+                accuracy: accuracyInput.valueAsNumber
+            }
+            let CompleteShip = new BasicShip(ship);
 
-                shipList.push(ship);
+                shipList.push(CompleteShip);
                 shipLog.innerText = '';
                 shipList.forEach( ship => { shipLog.innerText += ship.Description(shipList.indexOf(ship)) } );
                 Logger.innerText = ` Ship "${nameInput.value}" sucessfully created!\nNow you can see it in this sliding thing, on the right.`

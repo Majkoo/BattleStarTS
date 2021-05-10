@@ -1,93 +1,98 @@
+import {IsShip} from '../interfaces/IsShip'
+import {Logger} from '../app';
+
+
 export class BasicShip {
     
     constructor(        
-        public name: string,
-        public damage: number,
-        public speed: number,
-        public health: number,
-        public tech: number,
-        public accuracy: number,
+        public ship: IsShip,
     ){}
 
     Description(ID: number): string {
 
         return `    ========================== \n 
         Ship ID:       ${ID}\n
-        Ship name:     ${this.name}\n
-        Ship damage:   ${this.damage}\n
-        Ship speed:    ${this.speed}\n
-        Ship health:   ${this.health}\n
-        Ship tech:     ${this.tech}\n
-        Ship Accuracy: ${this.accuracy}\n\n`
+        Ship name:     ${this.ship.name}\n
+        Ship damage:   ${this.ship.damage}\n
+        Ship speed:    ${this.ship.speed}\n
+        Ship health:   ${this.ship.health}\n
+        Ship tech:     ${this.ship.tech}\n
+        Ship Accuracy: ${this.ship.accuracy}\n\n`
 
     }
 
     FightDesc(): string {
-        return `${this.name}:\n
-        --- DMG:   ${this.damage}  \n
-        --- SPD:    ${this.speed} \n
-        --- HP:   ${this.health} \n
-        --- Tech: ${this.tech}\n
-        --- ACC:  ${this.accuracy}\n `
+        return `${this.ship.name}:\n
+        --- DMG:  ${this.ship.damage}\n
+        --- SPD:  ${this.ship.speed}\n
+        --- HP:   ${this.ship.health}\n
+        --- Tech: ${this.ship.tech}\n
+        --- ACC:  ${this.ship.accuracy}\n `
     }
 
-    Fight(opponent: BasicShip): string {
+    Battle(opponent: BasicShip): void {
 
-        // CALA LOGIKA DO WYMIANY
+        // DO POPRAWY, ALE JESTEM DUMNY Z ZAMYSLU
 
-        let raport:string = '';
-        let round:number = 1;
+        let raport: string = '';
+        let round: number = 1;
 
-        let s1damage: number = this.damage;
-        let s1speed: number  = this.speed;
-        let s1health: number = this.health;
-        let s1dodgeChance: number =  (Math.log(s1speed/2.5) / Math.log(1.15))+3;
-        if (s1dodgeChance < 1) {
-            s1dodgeChance = 1;
-        }
+        let ship1name: string = this.ship.name;
+        let ship1health: number = this.ship.health;
+        let ship1damage: number = this.ship.damage;
+        let ship1dodge: number = Math.floor( (Math.log(this.ship.speed + 2)/3) /Math.log(1.06) );
+        if (ship1dodge < 1) { ship1dodge = 1 }
+        let ship1accuracy: number = Math.floor( (Math.log(this.ship.accuracy + 2)/3) /Math.log(1.06) );
 
+        let ship2name: string = opponent.ship.name;
+        let ship2health: number = opponent.ship.health;
+        let ship2damage: number = opponent.ship.damage;
+        let ship2dodge: number = Math.floor( (Math.log(opponent.ship.speed + 2)/3) /Math.log(1.06) );
+        if (ship2dodge < 1) { ship2dodge = 1 }
+        let ship2accuracy: number = Math.floor( (Math.log(opponent.ship.accuracy + 2)/3) /Math.log(1.06) );
 
-        let s2damage: number = opponent.damage;
-        let s2speed: number  = opponent.speed;
-        let s2health: number = opponent.health;
-        let s2dodgeChance: number =  (Math.log(s2speed/2.5) / Math.log(1.15))+3;
-        if (s2dodgeChance < 1) {
-            s2dodgeChance = 1;
-        }
+        function BattleInit() {
 
-        raport += ` ${this.FightDesc()}\n`
-        raport += ` ${opponent.FightDesc()}\n`
-        raport += ` ${this.name} has ${Math.round(s1dodgeChance)}% dodge chance against ${opponent.name}\n`
-        raport += ` ${opponent.name} has ${Math.round(s2dodgeChance)}% dodge chance against ${this.name}\n\n`
-        raport += `------------------------------------------------------------------------\n`;
-        raport += `-- Fight between ${this.name} and ${opponent.name} has begun! --\n`;
-        raport += `------------------------------------------------------------------------\n\n`;
-
-
-        while( (s1health > 0) && (s2health > 0) ) {
-
-            raport += `\n\n\n\n\n\n\n---------- ROUND ${round}  ----------  \n\n `;
-
-            let s1hitChance = Math.random() * (100 - 0) + 0;
-            let s2hitChance = Math.random() * (100 - 0) + 0;
-
-            if (s1hitChance > s2dodgeChance) {
-                s2health -= s1damage;
-                raport += `${opponent.name} got hit for ${s1damage}HP! Is has ${s2health}HP left.\n\n`;
-            } else {
-                raport += `${opponent.name} dodged! Is has ${s2health} health left.\n\n`;
-            }
+            Logger.innerText = ``;
+            let fight = true;
+            let round = 1;
             
-            if (s2hitChance > s1dodgeChance) {
-                s1health -= s2damage;
-                raport += `${this.name} got hit for ${s2damage}HP! Is has ${s1health}HP left.\n\n`;
-            } else {
-                raport += `${this.name} dodged! Is has ${s1health} health left.\n\n`;
+            while (fight) {
+
+                let ship1damageRand = Math.floor(ship1damage + Math.floor(Math.random() * (ship1damage*0.15)) + (ship1damage*0.15));
+                let ship2damageRand = Math.floor(ship2damage + Math.floor(Math.random() * (ship2damage*0.15)) + (ship2damage*0.15));
+
+                if(ship1health > 0) {
+                    if(fight) {
+                        Logger.innerText += `\n\n\n ---------- ROUND ${round} ---------- \n\n`;
+                        ship2health -= ship1damageRand;
+                        Logger.innerText += `${ship1name} has hit ${ship2name} for ${ship1damageRand}\n Current ${ship2name} health: ${ship2health}\n\n`
+                    }
+
+                } else {
+                    Logger.innerText += ` ----- ${ship1name} has been defeated. ----- \n`
+                    Logger.innerText += `${ship2name} has been left with ${ship2health}.\n`
+                    fight = false;
+                }
+
+                if(ship2health > 0) {
+                    if(fight) {
+                        ship1health -= ship2damageRand;
+                        Logger.innerText += `${ship2name} has hit ${ship1name} for ${ship2damageRand}\n Current ${ship1name} health: ${ship1health}\n\n`
+                    }
+                } else {
+
+                    Logger.innerText += `\n\n\n ----- ${ship2name} has been defeated. ----- \n`
+                    Logger.innerText += `${ship1name} has been left with ${ship1health}.\n`
+                    fight = false;
+                }
+
+                round++;
             }
-            
-            round++;
+
         }
-    return raport;
+
+        BattleInit();
     }
 
 
