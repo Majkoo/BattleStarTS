@@ -31,9 +31,9 @@ export let shipList: BasicShip[] = []
 
 let BStar: IsShip = {
     name: 'BattleStar',
-    damage: 45,
+    damage: 100,
     speed: 15,
-    health: 1800,
+    health: 2000,
     tech: 10,
     accuracy: 10,
 }
@@ -41,9 +41,9 @@ let BattleStar = new BasicShip(BStar)
 
 let SStar: IsShip = {
     name: 'ShadowStar',
-    damage: 20,
+    damage: 90,
     speed: 15,
-    health: 1800,
+    health: 2300,
     tech: 10,
     accuracy: 10,
 }

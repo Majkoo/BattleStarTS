@@ -58,15 +58,25 @@ export class BasicShip {
             let round = 1;
             
             while (fight) {
-
-                let ship1damageRand = Math.floor(ship1damage + Math.floor(Math.random() * (ship1damage*0.15)) + (ship1damage*0.15));
-                let ship2damageRand = Math.floor(ship2damage + Math.floor(Math.random() * (ship2damage*0.15)) + (ship2damage*0.15));
+                //                               BASE DMG    +  RANDOM DIGIT BETWEEN -15%_BASEDMG AND 15%_BASEDNG
+                let ship1damageRand = Math.floor(ship1damage + Math.floor(Math.random() * (ship1damage*0.15 + ship1damage*0.15 + 1) ) + -ship1damage*0.15);
+                let ship2damageRand = Math.floor(ship2damage + Math.floor(Math.random() * (ship2damage*0.15 + ship2damage*0.15 + 1) ) + -ship2damage*0.15);
+                let ship1HitChance = Math.floor(Math.random()*(100 + ship1accuracy) + 1);
+                let ship2HitChance = Math.floor(Math.random()*(100 + ship2accuracy) + 1);
 
                 if(ship1health > 0) {
+                    
                     if(fight) {
+
                         Logger.innerText += `\n\n\n ---------- ROUND ${round} ---------- \n\n`;
-                        ship2health -= ship1damageRand;
-                        Logger.innerText += `${ship1name} has hit ${ship2name} for ${ship1damageRand}\n Current ${ship2name} health: ${ship2health}\n\n`
+
+                        if (ship1HitChance > ship2dodge) {
+                            ship2health -= ship1damageRand;
+                            Logger.innerText += `${ship1name} has hit ${ship2name} for ${ship1damageRand}HP!\n Current ${ship2name} health: ${ship2health}.\n\n`
+                        } else {
+                            Logger.innerText += `${ship1name}'s attack has been dodged!\n Current ${ship2name} health: ${ship2health}.\n\n`
+                        }
+
                     }
 
                 } else {
@@ -76,10 +86,18 @@ export class BasicShip {
                 }
 
                 if(ship2health > 0) {
+
                     if(fight) {
-                        ship1health -= ship2damageRand;
-                        Logger.innerText += `${ship2name} has hit ${ship1name} for ${ship2damageRand}\n Current ${ship1name} health: ${ship1health}\n\n`
+
+                        if (ship2HitChance > ship1dodge) {
+                            ship1health -= ship2damageRand;
+                            Logger.innerText += `${ship2name} has hit ${ship1name} for ${ship2damageRand}HP!\n Current ${ship1name} health: ${ship1health}.\n\n`
+                        } else {
+                            Logger.innerText += `${ship2name}'s attack has been dodged!\n Current ${ship1name} health: ${ship1health}.\n\n`
+                        }
+
                     }
+
                 } else {
 
                     Logger.innerText += `\n\n\n ----- ${ship2name} has been defeated. ----- \n`
